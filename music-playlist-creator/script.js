@@ -127,7 +127,7 @@ function populateModal(playlistID) {
 
 
 
-//code that implements modal buttons
+//implements modal buttons
     // Get the buttons that open the modal
     var btns = document.querySelectorAll('.myBtn');
   
@@ -139,3 +139,64 @@ function populateModal(playlistID) {
       }
     });
   
+
+//Implents the add playlist Feature
+newPlaylistNumber=10;
+function submitForm(event){
+    event.preventDefault();
+    const gridContainer = document.querySelector('.grid-container');
+    const playlistCard = document.createElement('div');
+        playlistCard.className = 'playlist-cards myBtn';
+        playlistCard.dataset.playlistID = newPlaylistNumber;
+        newPlaylistNumber++;
+        playlistCard.innerHTML = `
+        <img src="playlist.png" alt="Playlist Art">
+            <p>${document.getElementById('playlistName').value}</p>
+            <p>${document.getElementById('Creator').value}</p>
+            <button class="close-btn">Close</button>
+            `;
+
+        const likeContainer = document.createElement('div');
+        likeContainer.className = 'like-container';
+        playlistCard.appendChild(likeContainer);
+
+        const emojiDiv = document.createElement('div');
+        emojiDiv.textContent = '👍';
+        likeContainer.appendChild(emojiDiv);
+
+        const likeBtn = document.createElement('p');
+        likeBtn.id = 'likeBtn' + newPlaylistNumber;
+        likeBtn.textContent = 0;  // Initialize like count to 0
+        likeContainer.appendChild(likeBtn);
+
+
+
+        // Function to toggle like count
+        function toggleLike() {
+            var likeCount = parseInt(likeBtn.textContent, 10);
+            likeCount = likeCount === 0 ? 1 : 0;  // Toggle like count
+            likeBtn.textContent = likeCount;
+        }
+
+        // Add event listeners to both the like button and the emoji
+        likeBtn.addEventListener('click', function(event) {
+            event.stopPropagation();
+            toggleLike();
+        });
+
+        emojiDiv.addEventListener('click', function(event) {
+            event.stopPropagation();
+            toggleLike();
+        });
+
+        const closeBtn = playlistCard.querySelector('.close-btn')
+        closeBtn.addEventListener('click',function(event){
+            event.stopPropagation();
+            deletePlaylist(playlistCard);
+        });
+        
+        gridContainer.appendChild(playlistCard);
+        const form = document.getElementById('myForm');
+
+        form.reset();
+    }
