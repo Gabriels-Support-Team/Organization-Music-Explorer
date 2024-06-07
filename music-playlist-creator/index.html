@@ -10,16 +10,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <!-- Your header content here -->
+    <header color="blue">
+        <h1 class="header-footer">Music Playlist Header </h1>
     </header>
 
     <main> 
-        <!-- Your main content here -->
+
+  
+  
+        <section class="grid-container">
+
+            </section>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" style="float: right;">&times;</span>
+        </div>
+        <img src="playlist.png" alt="Playlist Image" id="playlistModalImage"> <!-- Corrected ID -->
+        <h2 id="playlistModalTitle">Playlist Title</h2>
+        <p id="playlistModalArtist">Creator Name</p>
+        <button id="shuffleBtn"></button>
+        <div class="song-boxes"></div> <!-- Container for songs -->
+    </div>
+</div>
+  
     </main>
 
+
     <footer>
-        <!-- Your footer content here -->
+        <h1 class="header-footer">Music Playlist Footer </h1>
     </footer>
     <script src="data/data.js"></script>
     <script src="script.js"></script>
