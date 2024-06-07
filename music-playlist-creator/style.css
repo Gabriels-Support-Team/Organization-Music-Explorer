@@ -160,3 +160,12 @@ p{
     cursor: pointer;
     padding: 10px;
   }
+ form{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  border:2px solid;
+  margin:15px auto;
+  max-width:300px;
+  padding:20px;
+ }

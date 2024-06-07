@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header color="blue">
+    <header >
         <h1 class="header-footer">Music Playlist Header </h1>
+            <a href="featured.html">
+                <button style="width:70px; height:30px;margin:10px auto;display:block;">Featured</button>
+            </a>
     </header>
 
     <main> 
@@ -35,6 +38,28 @@
         <div class="song-boxes"></div> <!-- Container for songs -->
     </div>
 </div>
+ <form onsubmit="submitForm(event)" class="form">
+    <h3>Add New Playlist</h3>
+    <label for="PlaylistName">Playlist Name</label>
+    <input type="text" id="playlistName" name="playlistName"> <br>
+    <label for="Creator">Creator</label>
+    <input type="text" id="Creator" name="Creator"> <br>
+
+    <h5>Playlist Songs</h3>
+
+    <label for="Title">Title</label>
+    <input type="text" id="Title" name="Title"> <br>
+    <label for="Artist">Artist</label>
+    <input type="Artist" id="Artist" name="Artist"> <br>
+    <label for="duration">Duration</label>
+    <input type="duration" id="duration" name="duration"> <br>
+    <button id="addBtn">Add Song</button>
+    <input type="submit" value="Submit">
+
+    
+
+
+ </form>
   
     </main>
 

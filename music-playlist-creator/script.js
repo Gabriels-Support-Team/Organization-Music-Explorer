@@ -6,13 +6,12 @@ function populateGridContainer() {
     data.playlists.forEach((playlist) => {
         const playlistCard = document.createElement('div');
         playlistCard.className = 'playlist-cards myBtn';
-        playlistCard.ID = 
         playlistCard.dataset.playlistID = playlist.playlistID;
         playlistCard.innerHTML = `
             <img src="${playlist.playlist_art}" alt="Playlist Art">
             <p>${playlist.playlist_name}</p>
             <p>${playlist.playlist_creator}</p>
-            <span class="closePlaylist" >&times;</span>
+            <button class="close-btn">Close</button>
             `;
 
         const likeContainer = document.createElement('div');
@@ -47,19 +46,23 @@ function populateGridContainer() {
             event.stopPropagation();
             toggleLike();
         });
+
+        const closeBtn = playlistCard.querySelector('.close-btn')
+        closeBtn.addEventListener('click',function(event){
+            event.stopPropagation();
+            deletePlaylist(playlistCard);
+        });
         
         gridContainer.appendChild(playlistCard);
     });
+
 }
 
+
 populateGridContainer();
-document.addEventListener('DOMContentLoaded', function(){   
-    const gridContainer = document.querySelector('.grid-container');
-    gridContainer.addEventListener('click',function(event){
-        event.stopPropagation();
-        const PlaylistCard = event.target.closest('.playlist-cards');
-        PlaylistCard.style.display='none';
-});});
+function deletePlaylist(playlistCard){
+    playlistCard.style.display='none';
+}
 
 
 //code that implements modal closing feature
