@@ -11,30 +11,34 @@
 </head>
 <body>
     <header >
-        <h1 class="header-footer">My Playlist</h1>
-            <a href="featured.html">
-                <button style="width:70px; height:30px;margin:10px auto;display:block;">Featured</button>
+        <h1 class="header-footer" style="color:white; font-size:40px; font-family:Verdana;">My Playlist</h1>
+            <a class= featureButtonContainer href="featured.html" style="text-decoration: none;">
+                <button class="close-btn">Featured</button>
             </a>
     </header>
 
     <main> 
-
+        <input type="text" id="searchInput" placeholder="Search playlists...">
+        <div id="playlistContainer">
+            <!-- Playlists will be dynamically inserted here -->
+        </div>
   
   
-        <section class="grid-container">
+        <section style="background-color:#242322" class="grid-container">
 
             </section>
 <!-- The Modal -->
-<div id="myModal" class="modal">
+<div  id="myModal" class="modal">
     <!-- Modal content -->
-    <div class="modal-content">
+    <div  class="modal-content">
         <div class="modal-header">
             <span class="close" style="float: right;">&times;</span>
         </div>
         <img src="playlist.png" alt="Playlist Image" id="playlistModalImage"> <!-- Corrected ID -->
-        <h2 id="playlistModalTitle">Playlist Title</h2>
+        <h2 id="playlistModalTitle" >Playlist Title</h2>
         <p id="playlistModalArtist">Creator Name</p>
-        <button id="shuffleBtn"></button>
+        <button id="shuffleBtn" class="close-btn"></button>
+        <button class="edit-btn">Edit</button>
         <div class="song-boxes"></div> <!-- Container for songs -->
     </div>
 </div>
@@ -65,7 +69,6 @@
 
 
     <footer>
-        <h1 class="header-footer">Music Playlist Footer </h1>
     </footer>
     <script src="data/data.js"></script>
     <script src="script.js"></script>

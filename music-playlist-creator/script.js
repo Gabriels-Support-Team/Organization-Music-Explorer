@@ -11,7 +11,7 @@ function populateGridContainer() {
             <img src="${playlist.playlist_art}" alt="Playlist Art">
             <p>${playlist.playlist_name}</p>
             <p>${playlist.playlist_creator}</p>
-            <button class="close-btn">Close</button>
+            <button class="close-btn">X</button>
             `;
 
         const likeContainer = document.createElement('div');
@@ -90,7 +90,13 @@ function populateModal(playlistID) {
     const ModalArtist = document.getElementById('playlistModalArtist');
     const songBoxes = document.querySelector('.song-boxes'); // Container for songs
     const shuffleBtn = document.getElementById('shuffleBtn');
-    const playlist = data.playlists[playlistID]; // Get the playlist object
+    let playlist;
+    if (playlistID<10){
+         playlist = data.playlists[playlistID]; // Get the playlist object
+    }else{
+         playlist = playlistCard.dataset; // Get the playlist object
+
+    }
 
     // Set the playlist image
     modalImage.src = playlist.playlist_art;
@@ -134,7 +140,7 @@ function populateModal(playlistID) {
     // Add event listener to each button and populate the modal
     btns.forEach(function(btn) {
       btn.onclick = function() {
-        modal.style.display = "block";
+        modal.style.display = "flex";
         populateModal(btn.dataset.playlistID);        
       }
     });
@@ -148,6 +154,7 @@ function submitForm(event){
     const playlistCard = document.createElement('div');
         playlistCard.className = 'playlist-cards myBtn';
         playlistCard.dataset.playlistID = newPlaylistNumber;
+
         newPlaylistNumber++;
         playlistCard.innerHTML = `
         <img src="playlist.png" alt="Playlist Art">
@@ -155,6 +162,8 @@ function submitForm(event){
             <p>${document.getElementById('Creator').value}</p>
             <button class="close-btn">Close</button>
             `;
+        playlistCard.dataset.playlist_name = document.getElementById('playlistName').value;
+        playlistCard.dataset.playlist_creator = document.getElementById('Creator').value;
 
         const likeContainer = document.createElement('div');
         likeContainer.className = 'like-container';
@@ -197,6 +206,9 @@ function submitForm(event){
         
         gridContainer.appendChild(playlistCard);
         const form = document.getElementById('myForm');
-
+        playlistCard.onclick = function() {
+            modal.style.display = "block";
+            populateModal(playlistCard.dataset.playlistID);        
+          }
         form.reset();
     }
