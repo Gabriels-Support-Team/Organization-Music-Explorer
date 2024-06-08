@@ -3,10 +3,10 @@ function InfoLoader(){
    console.log(playlistID)
 
     // Select the modal elements
-        const modalImage = document.getElementById('playlistModalImage'); // Corrected to use ID
+        const modalImage = document.getElementById('playlistModalImage');
         const ModalTitle = document.getElementById('playlistModalTitle');
-        const songBoxes = document.querySelector('.song-boxes'); // Container for songs
-        const playlist = data.playlists[playlistID]; // Get the playlist object
+        const songBoxes = document.querySelector('.song-boxes'); 
+        const playlist = data.playlists[playlistID]; 
 
         // Set the playlist image
         modalImage.src = playlist.playlist_art;

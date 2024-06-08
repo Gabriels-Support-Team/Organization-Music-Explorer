@@ -13,7 +13,7 @@ function populateGridContainer() {
             <p>${playlist.playlist_creator}</p>
             <button class="close-btn">X</button>
             `;
-
+        //adding like button 
         const likeContainer = document.createElement('div');
         likeContainer.className = 'like-container';
         playlistCard.appendChild(likeContainer);
@@ -24,7 +24,7 @@ function populateGridContainer() {
 
         const likeBtn = document.createElement('p');
         likeBtn.id = 'likeBtn' + playlist.playlistID;
-        likeBtn.textContent = 0;  // Initialize like count to 0
+        likeBtn.textContent = 0;  
         likeContainer.appendChild(likeBtn);
 
 
@@ -32,7 +32,7 @@ function populateGridContainer() {
         // Function to toggle like count
         function toggleLike() {
             var likeCount = parseInt(likeBtn.textContent, 10);
-            likeCount = likeCount === 0 ? 1 : 0;  // Toggle like count
+            likeCount = likeCount === 0 ? 1 : 0;  
             likeBtn.textContent = likeCount;
         }
 
@@ -46,7 +46,7 @@ function populateGridContainer() {
             event.stopPropagation();
             toggleLike();
         });
-
+        //delete playlist button
         const closeBtn = playlistCard.querySelector('.close-btn')
         closeBtn.addEventListener('click',function(event){
             event.stopPropagation();
@@ -58,8 +58,9 @@ function populateGridContainer() {
 
 }
 
-
+//engage population of main page
 populateGridContainer();
+//deletes playlist
 function deletePlaylist(playlistCard){
     playlistCard.style.display='none';
 }
@@ -85,20 +86,20 @@ function deletePlaylist(playlistCard){
 //function that dynamicallyl populates modals
 function populateModal(playlistID) {
     // Select the modal elements
-    const modalImage = document.getElementById('playlistModalImage'); // Corrected to use ID
+    const modalImage = document.getElementById('playlistModalImage'); 
     const ModalTitle = document.getElementById('playlistModalTitle');
     const ModalArtist = document.getElementById('playlistModalArtist');
-    const songBoxes = document.querySelector('.song-boxes'); // Container for songs
+    const songBoxes = document.querySelector('.song-boxes'); 
     const shuffleBtn = document.getElementById('shuffleBtn');
     let playlist;
     if (playlistID<10){
-         playlist = data.playlists[playlistID]; // Get the playlist object
+         playlist = data.playlists[playlistID];
     }else{
-         playlist = playlistCard.dataset; // Get the playlist object
+         playlist = playlistCard.dataset; 
 
     }
 
-    // Set the playlist image
+    // Set existing html elements to required ones
     modalImage.src = playlist.playlist_art;
     ModalTitle.innerHTML = playlist.playlist_name;
     ModalArtist.innerHTML = playlist.playlist_creator;
@@ -210,5 +211,6 @@ function submitForm(event){
             modal.style.display = "block";
             populateModal(playlistCard.dataset.playlistID);        
           }
+          //reset the form after submit
         form.reset();
     }
