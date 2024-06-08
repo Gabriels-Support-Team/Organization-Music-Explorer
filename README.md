@@ -18,7 +18,7 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
   - [x] Fetch data from a provided JSON file and use it to create interactive playlist tiles.
   - [x] Each title should display the playlist's cover image, name, creator, and like count.
 
-- x ] **Playlist Details**
+- [x] **Playlist Details**
   - [x] Create a modal view that displays detailed information about a playlist when a user clicks on a playlist tile.
   - [x] The modal should show the playlist's cover image, name, creator, and a list of songs, including their titles, artists, and durations.
 
@@ -36,7 +36,7 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
   - [x] Allow users to create new playlists.
   - [x] Users can input playlist name, creator, and add multiple songs with details like title, artist, and duration.
 
-- [] **Edit Existing Playlists**
+- [ ] **Edit Existing Playlists**
   - [ ] Enable users to modify the details of existing playlists.
   - [x] Add an edit button to each playlist tile.
   - [ ] Users can update the name, creator, and songs of the playlist.
