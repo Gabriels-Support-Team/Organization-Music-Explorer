@@ -8,6 +8,7 @@ Estimated time spent: *20** hours spent in total
 
 Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
 
+
 ### Application Features
 
 #### CORE FEATURES
@@ -54,7 +55,7 @@ Deployed Application (optional): [Music Playlist Explorer Deployed Site](ADD_LIN
 
 `TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. (🚫 Remove this paragraph after adding walkthrough video)
 
-`ADD_EMBEDDED_CODE_HERE`
+https://www.loom.com/share/9b852270b32a498891022fe43f59c700?sid=a231af07-049c-4eea-b03b-c3e665b598dd
 
 ### Reflection
 
